@@ -9,11 +9,14 @@ while attempts >0:
     guess = int(input("Guess the Number: "))
 
     if guess > 100:
-        print ("Please select a number below 100")
+        print ("Please select a number below 101")
+        continue # skip the rest of the loop, do NOT reduce attempts
 
     elif guess < 1:
         print ("Please select a number above 0")
+        continue # skip the rest of the loop, do NOT reduce attempts
 
+ # Valid guesses below:
     elif guess > number:
         print ("lower")
 
@@ -24,6 +27,7 @@ while attempts >0:
         print ("Correct, you win!")
         break   # ends the loop
 
+# Only subtract attempts for valid guesses
     attempts -= 1
     print ("Attempts Left:", attempts)
 
